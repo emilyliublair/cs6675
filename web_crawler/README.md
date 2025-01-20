@@ -42,6 +42,8 @@ Documents/URLs could then be searched for within the MongoDB database with queri
 and get the following response:
 <img src="./images/mongodb_example_query.png" alt="Execution Time">
 
+Note that the data stored on the MongoDB database has been exported as a json file and can be acccessed at cs6675.web_crawler.json. 
+
 ### Optimization (multithreaded.py)
 Comparing the two options I explored, it is clear that the second option utilizing MongoDB was better in terms of speed. Option 2 also provided a better way for indexing -- enabling search with more keywords and the ability to search for keyphrases.
 
