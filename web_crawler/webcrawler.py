@@ -34,7 +34,7 @@ def crawl():
 
                 if x.status_code == 200:
                     visited.add(url)
-                    print(len(visited))
+                    # print(len(visited))
                     soup = BeautifulSoup(x.text, 'html.parser')
                     relative_links = soup.find_all('a')
                     text = soup.get_text(' ', strip=True)[:5000]
@@ -90,7 +90,6 @@ def main():
     print("Crawl Finished! Here are your crawl statistics: ")
     
     s = end - start
-    print(s)
     t = s / float(60)
     
     s = end - start
