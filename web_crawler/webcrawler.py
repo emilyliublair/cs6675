@@ -5,11 +5,11 @@ import threading
 import time
 from urllib.parse import urljoin
 
-uri = "mongodb://localhost:27017/"
+uri = "mongodb://localhost:27017/" # change to your MongoDB connection string
 client = MongoClient(uri)
 
-db = client.get_database("cs6675")
-web_crawler = db.get_collection("web_crawler_gui")
+db = client.get_database("cs6675") # change to your MongoDB database name
+web_crawler = db.get_collection("web_crawler_gui") # change to your collection name
 
 visited = set()
 starting_url = input("Enter starting URL: ")
@@ -88,9 +88,6 @@ def main():
 
     end = time.time()
     print("Crawl Finished! Here are your crawl statistics: ")
-    
-    s = end - start
-    t = s / float(60)
     
     s = end - start
     t = s / float(60)

@@ -1,6 +1,8 @@
 
 # CS6675 Homework 1: Web Crawler
 
+Github Link: https://github.com/emilyliublair/cs6675/tree/main/web_crawler
+
 ## Implementation
 For Homework 1, I chose to complete option 1.2 and create my own web crawler from scratch. 
 
@@ -65,8 +67,8 @@ Thus, to further optimize my web crawler, I chose to incoporate multi-threading 
 <img src="./images/extract_v_crawled.png" alt="Extraction vs Crawled" width="400">
 
 
-## Final Product
-The final product can be accessed at webcrawler.py. It utilizes 10 threads and the MongoDB approach for storage. To use, you must create your own MongoDB collection and modify those values within the script (`uri, db, web_crawler`). Once you run the script, you will be prompted to enter a starting URL, a URL narrower, and maximum number of URLs you want to crawl. Once the script finishes, it will print out some crawl statistics including total time of execution, # of URLs crawled, and crawl speed. The following is an example execution:
+## Final Product (+ How to Run)
+The final product can be accessed at webcrawler.py. It utilizes 10 threads and the MongoDB approach for storage. To use, you must create your own MongoDB collection and modify those values within the script (`uri, db, web_crawler`) as necessary. Once you run the script, you will be prompted to enter a starting URL, a URL narrower, and maximum number of URLs you want to crawl. Once the script finishes, it will print out some crawl statistics including total time of execution, # of URLs crawled, and crawl speed. The following is an example execution:
 
     Enter starting URL: https://en.wikipedia.org/wiki/Web_crawler
     What would you like to limit your crawl to? en.wikipedia.org/wiki
