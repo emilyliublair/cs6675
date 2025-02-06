@@ -1,5 +1,7 @@
 # CS6675 Homework 2: Peer to Peer System
 
+Github Link: https://github.com/emilyliublair/cs6675/tree/main/peer2peer
+
 ## Implementation
 For Homework 2, I chose to complete option 1.2 and join a full-fledge P2P network as a client. The P2P system I chose was BitTorrent (https://www.bittorrent.com/) and used its Web API (https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-global-transfer-info) to perform queries and measurements. 
 
@@ -37,6 +39,8 @@ Pressing `4` allows you to measure the latency and throughput of varying number 
 Pressing `5` allows you to measure the seed to leech ratio of the system within a specified duration. An example output is as follows:
 
 <img src=./images/seed_leech.png>
+
+Note: the above measurements were made on the following torrent: enwiki-20241201-pages-articles-multistream.xml.bz2
 
 ## Observations
 Here are 3 observations I made based on the 5 example measurements that I provided above. 
