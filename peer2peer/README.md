@@ -10,7 +10,7 @@ To use my script, download BitTorrent and either download a .torrent file or ent
 
 My script offers 5 possible measurements to the user:
 
-**Option 1: Membership Establishment Cost**
+**Option 1: Membership Establishment (Hand-Shake) Cost**
 
 Pressing `1` allows you to measure the memership establishment cost of the network. It prints out the time it takes the login and establish an initial connection with peers (can be leechs or seeds). An example output is as follows:
 
