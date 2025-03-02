@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heavy Bacgrkound Script</title>
+</head>
+<body>
+    <h1>Heavy Bacgrkound Script</h1>
+    <p>Computing prime numbers... This will use high CPU!</p>
+    <p id="result"></p>
+
+    <script>
+        function isPrime(num) {
+            if (num < 2) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        function computePrimes() {
+            const limit = 50000; // Increase for higher CPU load
+            let count = 0, num = 2, primes = [];
+
+            console.time("Computation Time"); // Start performance measurement
+
+            while (count < limit) {
+                if (isPrime(num)) {
+                    primes.push(num);
+                    count++;
+                }
+                num++;
+            }
+
+            console.timeEnd("Computation Time"); // Log execution time in console
+            document.getElementById("result").innerText = `Found ${primes.length} primes.`;
+        }
+
+        // Run automatically when the page loads
+        window.onload = computePrimes;
+    </script>
+</body>
+</html>

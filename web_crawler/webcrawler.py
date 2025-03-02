@@ -44,6 +44,7 @@ def crawl():
 
                     for link in relative_links:
                         next_url = link.get("href")
+                        print(next_url)
                         if next_url and narrow_url in urljoin(url, next_url) and next_url not in visited:
                             with q_lock: 
                                 q.append(urljoin(url, next_url))
