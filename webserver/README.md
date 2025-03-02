@@ -13,12 +13,9 @@ The web service I created hosts 5 web pages, each containing different content. 
     <img src="./images/images.PNG" width="200">
     <img src="./images/video.PNG" width="200">
     <img src="./images/animation.PNG" width="200">
-</div>
-<div style="display: flex; gap: 10px;">
     <img src="./images/prime.PNG" width="200">
     <img src="./images/combined.PNG" width="200">
 </div>
-
 
 ### Testing Web Server Performance
 To test my web server performance, I used Locust: https://github.com/locustio/locust. You can view the locust file at `locustfile.py`, which can be run using the following command: `locust -f locustfile.py --host={host}`. Then, using it's web-based UI, I tested my web service using 100 total users with a ramp up of 10 (users started per second), and ran it until 50,000 requests had been completed. 
