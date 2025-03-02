@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Combined Page</title>
+  <style>
+    canvas { border: 1px solid black; display: block; margin: 20px 0; }
+  </style>
+</head>
+<body>
+  <h1>Combined Page</h1>
+
+  <img src="images/flower1.jpg" width="300">
+  <img src="images/flower2.jpg" width="300">
+  <img src="images/book1.jpg" width="300">
+  <img src="images/book2.jpg" width="300">
+  <img src="images/computer1.jpg" width="300">
+  <img src="images/computer2.jpg" width="300">
+  <img src="images/water1.jpg" width="300">
+  <img src="images/water2.jpg" width="300">
+  <img src="images/phone1.jpg" width="300">
+  <img src="images/phone2.jpg" width="300">
+
+  <video width="640" height="360" controls>
+    <source src="videos/video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Canvas for CPU-heavy animation -->
+  <canvas id="animationCanvas" width="600" height="300"></canvas>
+
+  <p>Computing prime numbers... This will use high CPU!</p>
+  <p id="result"></p>
+  
+  <script>
+    const canvas = document.getElementById("animationCanvas");
+    const ctx = canvas.getContext("2d");
+    const numBalls = 100;
+    const balls = [];
+
+    for (let i = 0; i < numBalls; i++) {
+      balls.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        dx: Math.random() * 4 - 2,
+        dy: Math.random() * 4 - 2,
+        radius: 10 + Math.random() * 10,
+        color: `hsl(${Math.random() * 360}, 100%, 50%)`
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      balls.forEach(ball => {
+        ball.x += ball.dx;
+        ball.y += ball.dy;
+        
+        if (ball.x - ball.radius < 0 || ball.x + ball.radius > canvas.width) ball.dx *= -1;
+        if (ball.y - ball.radius < 0 || ball.y + ball.radius > canvas.height) ball.dy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+        ctx.fillStyle = ball.color;
+        ctx.fill();
+        ctx.closePath();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+
+  <script>
+    function isPrime(num) {
+        if (num < 2) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) return false;
+        }
+        return true;
+    }
+
+    function computePrimes() {
+        const limit = 50000; // Increase for higher CPU load
+        let count = 0, num = 2, primes = [];
+
+        console.time("Computation Time"); // Start performance measurement
+
+        while (count < limit) {
+            if (isPrime(num)) {
+                primes.push(num);
+                count++;
+            }
+            num++;
+        }
+
+        console.timeEnd("Computation Time"); // Log execution time in console
+        document.getElementById("result").innerText = `Found ${primes.length} primes.`;
+    }
+
+    // Run automatically when the page loads
+    window.onload = computePrimes;
+  </script>
+</body>
+</html>

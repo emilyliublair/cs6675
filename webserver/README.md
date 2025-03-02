@@ -1,12 +1,23 @@
 # CS6675 Homework 4: Web Server Technology
 
+GitHub Link: https://github.com/emilyliublair/cs6675/tree/main/webserver
+
 ## Implementation
 For Homework 4, I chose to complete option 2 and create my own web service that hosts 5 web pages and create various workloads to interact with the web service. 
 
 ### Web Service
-The web service I created hosts 5 web pages, each containing different content. `/page1.html` contains 10 different images, `page2.html` contains 5 of the same video, `page3.html` contains a JavaScript animation, `page4.html` contains a script that computes 50,000 primes, and `page5.html` is a combination of all previous pages. Note that the content in each page was chosen to be included due to being CPU-intensive, thus increasing server load.  
+The web service I created hosts 5 web pages, each containing different content. `/page1.html` contains 10 different images, `page2.html` contains 5 of the same video, `page3.html` contains a JavaScript animation, `page4.html` contains a script that computes 50,000 primes, and `page5.html` is a combination of all previous pages. You can view these pages in the `/tomcat/pages` folder. Note that the content in each page was chosen to be included due to being CPU-intensive, thus increasing server load.  
 
 ### Remote Client
+<div style="display: flex; gap: 10px;">
+    <img src="./images/images.PNG" width="200">
+    <img src="./images/video.PNG" width="200">
+    <img src="./images/animation.PNG" width="200">
+</div>
+<div style="display: flex; gap: 10px;">
+    <img src="./images/prime.PNG" width="200">
+    <img src="./images/combined.PNG" width="200">
+</div>
 
 
 ### Testing Web Server Performance
